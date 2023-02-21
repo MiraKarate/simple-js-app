@@ -1,0 +1,9 @@
+body (font-family: IBM Plex Mono, monospace;
+font-weight: 400; 
+font-size: 20px;
+/* Sets the font size to 20px */
+line-height: 1.6;
+/* Sets the line-height to 1.6 */
+background-color: darkblue;
+color: white; 
+)
