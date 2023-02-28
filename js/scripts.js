@@ -23,6 +23,6 @@ let pokemonRepository = (function () {
 
 // internale anonymous function to loop through the list of pokemon
 pokemonRepository.getAll().forEach(function(pokemon){
-    document.write(pokemon.name + ' (height:' + pokemon.height + ');<br>');
+    document.write(pokemon.name + ' (height:' + pokemon.height + ', weight:' + pokemon.weight + ', types:' + pokemon.types + ')<br>');
 });
   
