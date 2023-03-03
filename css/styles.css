@@ -1,13 +1,75 @@
-body {
-font-family: IBM Plex Mono, monospace;
-font-weight: 400; 
-font-size: 20px;
-/* Sets the font size to 20px */
-line-height: 1.6;
-/* Sets the line-height to 1.6 */
-background-color: darkblue;
-color: white; 
-padding: 20px;
-text-align: center;
+:root {
+    box-sizing: border-box;
+    --main-background: rgb(237, 199, 72);
+    --main-box: whitesmoke;
+    --main-text:black;
+    --accent-color: rgb(137, 137, 223); 
 }
 
+
+body {
+    font-family: IBM Plex Mono, monospace;
+    font-weight: 400; 
+    font-size: 20px; /* Sets the font size to 20px */
+    line-height: 1.6; /* Sets the line-height to 1.6 */
+    background-color: var(--main-background);
+    color: var(--main-text); 
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pokedex_container{
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid var(--main-text);
+    width: 300px; 
+    background-color: var(--main-box);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+}
+
+h1{
+    font-weight: 400; 
+    font-size: 30px; 
+    margin: 0px;
+    text-align: center;
+}
+
+.pokemon-list{
+    list-style: none;
+    padding-left: 0; 
+    text-align: center;
+}
+
+.pokemon-name-button{
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+    font-family: inherit; /* takes the font from the outer container */
+    background-color: var(--accent-color); 
+    color: var(--main-text); 
+    border-radius: 15px;
+    border: 1px solid black;
+    /*adds spacing to the button and button shadow*/
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    padding: 7px;
+    margin: 2px;
+    list-style: none;
+    font-weight: 400; 
+    font-size: 16px; 
+    width: 180px; /* Sets the widt to 180px */
+    text-align: center;
+}
+
+.pokemon-name-button:hover {
+    cursor: pointer;
+    background-color: var(--main-background);
+    color: var(--main-text);
+    opacity: 0.8;
+    transition: 0.5s;
+  }
