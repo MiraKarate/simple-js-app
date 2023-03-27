@@ -12,46 +12,56 @@ body {
     font-weight: 400; 
     font-size: 20px; /* Sets the font size to 20px */
     line-height: 1.6; /* Sets the line-height to 1.6 */
-    background-color: var(--main-background);
+    background-color: var(--main-box);
     color: var(--main-text); 
 }
 
 
 /*-------------Header-------------*/
 
-.header {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-rows: 100px; 
-    align-items: center;
+.header { 
     padding-left: 40px;
     padding-right: 40px;
-    margin: 0 auto;
-    border: 1px solid var(--main-text);
-    background-color: var(--main-box);
-    border-radius: 15px;
+    border-bottom: 1px solid var(--main-text);
+    background-color: var(--main-background);
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
-    margin-bottom: 20px;
-    text-align: center;
+
 }
 
-.h1 {
+.navbar-brand {
     font-weight: 400; 
-    font-size: 40px; 
-    margin: 10px;
-    text-align: center;
+    font-size: 30px; 
     font-weight: bold;
+    color:black;
 }
+
+.navbar-brand:hover {
+    color: var(--main-box);
+}
+
+.pokemon-search {
+    border-radius: 15px;
+    background-color: var(--main-box);
+    border: 1px solid rgb(0, 0, 0);
+    color: var(--black);
+}
+
+.pokemon-search::placeholder {
+    color: black;
+    opacity: 5;
+    font-style: italic;
+}
+
 
 /*-------------POKEDEX-------------*/
 
+
 .pokedex_container{
     padding: 40px;
-    margin: 0 auto;
-    border: 1px solid var(--main-text);
+    border: none;
     background-color: var(--main-box);
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    margin-top: 150px;
+    margin-bottom: 100px;
 }
 
 .pokemon-list{
@@ -100,111 +110,31 @@ body {
 
 /*-------------MODAL-------------*/
 
-
-#modal-container {
-    display: none;
-}
-  
-#modal-container.is-visible {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    
-    /* to show it above other content */
-    z-index: 999; 
-    
-    /* to allow scrolling if the screen is not high enough*/
-    overflow: auto; 
-    
-    /* this is used to center the modal */
-    display: grid;
-    text-align: center;
-}
-  
-.modal {
-    display: inline-block;
-    box-sizing: border-box;
-    padding: 20px;
-    margin: auto;
-    border: 1px solid var(--main-text);
-    width: 100%;
-    max-width: 900px;
-    min-width: 270px;
-    width: 400px; 
-    height: 500px;
+.list-group-item{
     background-color: var(--main-box);
-    border-radius: 15px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
-
-    /*for close button*/
-    text-align: center; 
+    border:  none;
 }
+
+/*-------------FOOTER-------------*/
+
   
-.modal-close {
-    border: none;
-    display: inline-block;
-    font-family: inherit; /* takes the font from the outer container */
-    background-color: var(--accent-color); 
-    color: var(--main-text); 
-    border-radius: 15px;
-    border: 1px solid black;
-    margin-top: 5px;
-    margin-right: 5px;
-    float: right;
-}
-
-.modal-close:hover {
-    cursor: pointer;
-    background-color: var(--main-background);
-    color: var(--main-text);
-    opacity: 0.8;
-    margin-bottom: 10px;
-}
-
-.modal-title {
-    font-family: inherit; /* takes the font from the outer container */
-    color: var(--main-text); 
-    font-weight: 400; 
-    font-size: 30px; 
-    margin-top: 50px;
-    margin-bottom: 0px;
+footer {
+    align-items: center;
     text-align: center;
-    text-transform: uppercase;
+    background-color: var(--main-box);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-top: 20px;
+    border-top: 1px solid var(--main-text);
+
 }
 
-.pokemon-height{
-    font-family: inherit; /* takes the font from the outer container */
-    color: var(--main-text); 
-    text-align: center;
-    font-weight: 400; 
-    font-size: 16px; 
-    line-height: 1.6;
-    margin: 0;
+a{
+    color: var(--accent-color);
 }
 
-.pokemon-types{
-    font-family: inherit; /* takes the font from the outer container */
-    color: var(--main-text); 
-    text-align: center;
-    font-weight: 400; 
-    font-size: 16px; 
-    line-height: 1.6;
-    margin: 0;
-    margin-bottom: 10px;
+a:hover{
+    color: var(--accent-color);
 }
-
-.pokemon-img {
-    width:70%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-  
 
 
 
