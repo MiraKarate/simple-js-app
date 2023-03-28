@@ -168,7 +168,6 @@ let pokemonRepository = (function () {
     return {
       add: add,
       getAll: getAll,
-      //filterPokemonByName: filterPokemonByName,
       addListItem: addListItem,
       showDetails: showDetails,
       loadList: loadList,
