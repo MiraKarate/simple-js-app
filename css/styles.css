@@ -52,6 +52,10 @@ body {
     font-style: italic;
 }
 
+.search-list {
+    grid-template-columns: 1fr;
+}
+
 
 /*-------------POKEDEX-------------*/
 
