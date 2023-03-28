@@ -19,14 +19,14 @@ let pokemonRepository = (function () {
 
 
     function addListItem(pokemon) {
-        let pokedexList = document.querySelector('.pokemon-list'); //assign variable the ul element (class pokemon-list)
+        let pokedexList = document.querySelector('.list-group'); //assign variable the ul element (class list-group)
         let listItem = document.createElement('li'); // Create an li element 
         
-        listItem.classList.add('list-group-item'); // BOTTSTRAP added new class to li
+        listItem.classList.add('group-list-item'); // BOTTSTRAP added new class to li
 
         let button = document.createElement('button'); // Create a button element
         button.innerText = pokemon.name; // set buttons innerText to be the Pokémon's name
-        button.classList.add('pokemon-name-button'); // Adds a class to the button using the classList.add method
+        button.classList.add('pokemon-name-button'); // Adds a class to the button using the classList.add method for css
         
         button.classList.add('btn'); // BOTTSTRAP 
         button.setAttribute('data-toggle', 'modal'); // BOTTSTRAP 
@@ -40,12 +40,6 @@ let pokemonRepository = (function () {
         });
     }
 
-    //Logs pokémon details in the Modal when button is clicked
-    function showDetails(pokemon) {
-      loadDetails(pokemon).then(function () {
-        showModal(pokemon);
-      });
-    }
 
     //Fetches pokémon list from API and adds pokémons as objects
     function loadList() {
@@ -65,50 +59,70 @@ let pokemonRepository = (function () {
     }
 
     //Gets data from detailsURL and returns specific pokémon details
-    function loadDetails(pokemon) {
+    function loadDetails(item) {
         let url = pokemon.detailsUrl;
         return fetch(url).then(function (response) {
           return response.json();
         }).then(function (details) {
           // Now we add the details to the item
-          pokemon.imageUrl = details.sprites.front_default;
-          pokemon.height = details.height;
-          pokemon.types = details.types.map((type) => type.type.name).join(', ');
+          item.imageUrl = details.sprites.front_default;
+          item.height = details.height;
+          item.types = details.types.map((type) => type.type.name).join(', ');
 
         }).catch(function (e) {
           console.error(e);
         });
     }
 
+     //Logs pokémon details in the Modal when button is clicked
+    function showDetails(pokemon) {
+      loadDetails(pokemon).then(function () {
+        showModal(pokemon);
+      });
+    };
 
+    //MODAL STARTS
     function showModal(pokemon) {
-        let modalBody = $(".modal-body");
-        let modalTitle = $(".modal-title");
+      let modalContainer = $("#pokemonModal")
+      let modalBody = $(".modal-body");
+      let modalTitle = $(".modal-title");
+
+      // Clear all existing modal content everytime it's clicked
+      modalTitle.innerHTML= '';
+      modalBody.innerHTML = ''; 
+
+
+  // Add the title Element
+      let pokemonName = document.createElement('h1');
+      pokemonName.classList.add('modal-title');
+      pokemonName.innerText = pokemon.name;
+
+  // Add the pokemon height
+      let pokemonHeight = document.createElement('p');
+      pokemonHeight.classList.add('pokemon-height');
+      pokemonHeight.innerText = ("Height: " + (pokemon.height/10) + " m");
       
-        // Clear all existing modal content everytime it's clicked
-        modalTitle.empty();
-        modalBody.empty();
-  
-        // Add the title Element
-        let pokemonName = $("<h1>" + pokemon.name + "</h1>");
-    
-        // Add the pokemon height
-        let pokemonHeight = $("<p>" + "Height: " + (pokemon.height/10) + " m" + "</p>");
+  // Add the pokemon type
+      let pokemonTypes = document.createElement('p');
+      pokemonTypes.classList.add('pokemon-types');
+      pokemonTypes.innerText = ("Types: " +pokemon.types);
+
+  // Add the pokemon image 
+      let pokemonImage = document.createElement("img");
+      pokemonImage.classList.add('pokemon-img')
+      pokemonImage.setAttribute("src", pokemon.imageUrl);
+      pokemonImage.setAttribute("width", "304");
+      pokemonImage.setAttribute("height", "228");
+      pokemonImage.setAttribute("alt", "The Pokemon Image");
       
-        // Add the pokemon types
-        let pokemonTypes = $("<p>"+ "Types: " + pokemon.types + "</p>");
-        
-        // Add the pokemon image 
-        let pokemonImage = $('<img class="pokemon-img" style="width:50%">');
-        pokemonImage.setAttribute("src", pokemon.imageUrl);
       
-        
-        //modalBody.append(types);
-        modalTitle.append(pokemonName);
-        modalBody.append(pokemonHeight);
-        modalBody.append(pokemonTypes);
-        modalBody.append(pokemonImage);
-    }
+      //modalBody.append(types);
+      modalTitle.appendChild(pokemonName);
+      modalBody.appendChild(pokemonHeight);
+      modalBody.appendChild(pokemonTypes);
+      modalBody.appendChild(pokemonImage);
+}
+
     
     
     //Removes visibility class from modal

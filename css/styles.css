@@ -62,9 +62,10 @@ body {
     background-color: var(--main-box);
     margin-top: 150px;
     margin-bottom: 100px;
+    text-align: center;
 }
 
-.pokemon-list{
+.list-group{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     padding-inline-start: 0px;
@@ -73,9 +74,11 @@ body {
     text-align: center;
 }
 
-.list-item{
-    list-style: none;
-}
+/* .group-list-item{
+    background-color: var(--main-box);
+    border: none;
+}*/
+
 
 .pokemon-name-button{
     /* overwrites browser defaults and resets the border */
@@ -110,10 +113,7 @@ body {
 
 /*-------------MODAL-------------*/
 
-.list-group-item{
-    background-color: var(--main-box);
-    border:  none;
-}
+
 
 /*-------------FOOTER-------------*/
 
