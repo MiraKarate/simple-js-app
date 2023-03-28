@@ -46,14 +46,10 @@ body {
     color: var(--black);
 }
 
-.pokemon-search::placeholder {
+#search-input::placeholder {
     color: black;
     opacity: 5;
     font-style: italic;
-}
-
-.search-list {
-    grid-template-columns: 1fr;
 }
 
 
