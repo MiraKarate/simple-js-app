@@ -60,7 +60,7 @@ let pokemonRepository = (function () {
 
     //Gets data from detailsURL and returns specific pokémon details
     function loadDetails(item) {
-        let url = pokemon.detailsUrl;
+        let url = item.detailsUrl;
         return fetch(url).then(function (response) {
           return response.json();
         }).then(function (details) {
@@ -88,8 +88,8 @@ let pokemonRepository = (function () {
       let modalTitle = $(".modal-title");
 
       // Clear all existing modal content everytime it's clicked
-      modalTitle.innerHTML= '';
-      modalBody.innerHTML = ''; 
+      modalTitle.empty();
+      modalBody.empty(); 
 
 
   // Add the title Element
@@ -117,13 +117,12 @@ let pokemonRepository = (function () {
       
       
       //modalBody.append(types);
-      modalTitle.appendChild(pokemonName);
-      modalBody.appendChild(pokemonHeight);
-      modalBody.appendChild(pokemonTypes);
-      modalBody.appendChild(pokemonImage);
-}
+      modalTitle.append(pokemonName);
+      modalBody.append(pokemonHeight);
+      modalBody.append(pokemonTypes);
+      modalBody.append(pokemonImage);
+    }
 
-    
     
     //Removes visibility class from modal
     function hideModal() {
@@ -131,12 +130,14 @@ let pokemonRepository = (function () {
         modalContainer.classList.remove('is-visible');
     }
     
+
     window.addEventListener('keydown', (e) => {
         let modalContainer = document.querySelector('#pokemonModal');
         if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
           hideModal();
-        }
+        }    
     });
+
     
     return {
       add: add,
