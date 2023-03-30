@@ -85,7 +85,7 @@ let pokemonRepository = (function () {
     function showModal(pokemon) {
       let modalContainer = $("#pokemonModal")
       let modalBody = $(".modal-body");
-      let modalTitle = $(".modal-title");
+      let modalTitle = $('.modal-title');
 
       // Clear all existing modal content everytime it's clicked
       modalTitle.empty();
