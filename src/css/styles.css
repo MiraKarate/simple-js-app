@@ -1,0 +1,158 @@
+:root {
+    /*box-sizing: border-box;*/
+    --main-background: rgb(237, 199, 72);
+    --main-box: whitesmoke;
+    --main-text:black;
+    --accent-color: rgb(113, 137, 223); 
+}
+
+
+body {
+    font-family: IBM Plex Mono, monospace;
+    font-weight: 400; 
+    font-size: 20px; /* Sets the font size to 20px */
+    line-height: 1.6; /* Sets the line-height to 1.6 */
+    background-color: var(--main-box);
+    color: var(--main-text); 
+}
+
+
+/*-------------Header-------------*/
+
+.header { 
+    padding-left: 40px;
+    padding-right: 40px;
+    border-bottom: 1px solid var(--main-text);
+    background-color: var(--main-background);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+}
+
+.navbar-brand {
+    font-weight: 400; 
+    font-size: 30px; 
+    font-weight: bold;
+    color:black;
+}
+
+.navbar-brand:hover {
+    color: var(--main-box);
+}
+
+<<<<<<< HEAD:css/styles.css
+#search-input{
+=======
+#search-input {
+>>>>>>> gh-pages:src/css/styles.css
+    border-radius: 15px;
+    background-color: var(--main-box);
+    border: 1px solid rgb(0, 0, 0);
+    color: var(--black);
+}
+
+#search-input::placeholder {
+    color: black;
+    opacity: 5;
+    font-style: italic;
+}
+
+<<<<<<< HEAD:css/styles.css
+=======
+
+>>>>>>> gh-pages:src/css/styles.css
+
+/*-------------POKEDEX-------------*/
+
+
+.pokedex_container{
+    padding: 40px;
+    border: none;
+    background-color: var(--main-box);
+    margin-top: 150px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.list-group{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding-inline-start: 0px;
+    grid-gap: 20px;
+    list-style: none;
+    text-align: center;
+}
+
+
+.pokemon-name-button{
+    /* overwrites browser defaults and resets the border */
+    list-style: none;
+    border: none;
+    display: inline-block;
+    font-family: inherit; /* takes the font from the outer container */
+    background-color: var(--accent-color); 
+    color: var(--main-text); 
+    border-radius: 15px;
+    border: 1px solid black;
+    /*adds spacing to the button and button shadow*/
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2); 
+    padding: 7px;
+    margin: 2px;
+    font-weight: 400; 
+    font-size: 16px; 
+    width: 180px; /* Sets the width to 180px */
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+.pokemon-name-button:hover {
+    cursor: pointer;
+    background-color: var(--main-background);
+    color: var(--main-text);
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+
+
+/*-------------MODAL-------------*/
+
+
+
+/*-------------FOOTER-------------*/
+
+  
+footer {
+    align-items: center;
+    text-align: center;
+    background-color: var(--main-box);
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-top: 20px;
+    border-top: 1px solid var(--main-text);
+
+}
+
+a{
+    color: var(--accent-color);
+}
+
+a:hover{
+    color: var(--accent-color);
+}
+
+
+
+@keyframes bounce {
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+
+    80% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
