@@ -1,6 +1,5 @@
-# simple-js-app
 
-# JavaScript App (Pokédex)
+# Simple JavaScript App (Pokédex)
 
 ## Description 
 
