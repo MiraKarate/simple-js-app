@@ -85,7 +85,7 @@ let pokemonRepository = (function () {
     function showModal(pokemon) {
       let modalContainer = $("#pokemonModal")
       let modalBody = $(".modal-body");
-      let modalTitle = $(".modal-title");
+      let modalTitle = $('.modal-title');
 
       // Clear all existing modal content everytime it's clicked
       modalTitle.empty();
@@ -143,7 +143,7 @@ let pokemonRepository = (function () {
     function searchPokemon() {
       let searchInput = document.getElementById('search-input');
       let searchText = searchInput.value.toLowerCase();
-      let allPokemon = document.querySelectorAll('.list-group-item');
+      let allPokemon = document.querySelectorAll('.group-list-item');
 
       allPokemon.forEach(function(pokemon) {
         let pokemonText = pokemon.querySelector('.pokemon-name-button').innerText.toLowerCase();
@@ -168,7 +168,6 @@ let pokemonRepository = (function () {
     return {
       add: add,
       getAll: getAll,
-      //filterPokemonByName: filterPokemonByName,
       addListItem: addListItem,
       showDetails: showDetails,
       loadList: loadList,
