@@ -4,12 +4,12 @@ let pokemonRepository = (function () {
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     function add(pokemon) {
-        if (typeof pokemon === "object" && 
-        "name" in pokemon 
+        if (typeof pokemon === 'object' && 
+        'name' in pokemon 
         ) {
             pokemonList.push(pokemon);
         } else {
-            document.write("A pokemon is required.");
+            document.write('A pokemon is required.');
         }
     }
 
@@ -22,15 +22,15 @@ let pokemonRepository = (function () {
         let pokedexList = document.querySelector('.list-group'); //assign variable the ul element (class list-group)
         let listItem = document.createElement('li'); // Create an li element 
         
-        listItem.classList.add('group-list-item'); // BOTTSTRAP added new class to li
+        listItem.classList.add('group-list-item'); // BOOTSTRAP added new class to li
 
         let button = document.createElement('button'); // Create a button element
         button.innerText = pokemon.name; // set buttons innerText to be the Pokémon's name
         button.classList.add('pokemon-name-button'); // Adds a class to the button using the classList.add method for css
         
-        button.classList.add('btn'); // BOTTSTRAP 
-        button.setAttribute('data-toggle', 'modal'); // BOTTSTRAP 
-        button.setAttribute('data-target', '#pokemonModal'); // BOTTSTRAP 
+        button.classList.add('btn'); // BOOTSTRAP 
+        button.setAttribute('data-toggle', 'modal'); // BOOTSTRAP 
+        button.setAttribute('data-target', '#pokemonModal'); // BOOTSTRAP 
         
         listItem.appendChild(button); // append the button to the list item as its child
         pokedexList.appendChild(listItem); // append the list item to the unordered list as its child
@@ -79,12 +79,11 @@ let pokemonRepository = (function () {
       loadDetails(pokemon).then(function () {
         showModal(pokemon);
       });
-    };
+    }
 
     //MODAL STARTS
     function showModal(pokemon) {
-      let modalContainer = $("#pokemonModal")
-      let modalBody = $(".modal-body");
+      let modalBody = $('.modal-body');
       let modalTitle = $('.modal-title');
 
       // Clear all existing modal content everytime it's clicked
@@ -100,20 +99,20 @@ let pokemonRepository = (function () {
   // Add the pokemon height
       let pokemonHeight = document.createElement('p');
       pokemonHeight.classList.add('pokemon-height');
-      pokemonHeight.innerText = ("Height: " + (pokemon.height/10) + " m");
+      pokemonHeight.innerText = ('Height: ' + (pokemon.height/10) + ' m');
       
   // Add the pokemon type
       let pokemonTypes = document.createElement('p');
       pokemonTypes.classList.add('pokemon-types');
-      pokemonTypes.innerText = ("Types: " +pokemon.types);
+      pokemonTypes.innerText = ('Types: ' +pokemon.types);
 
   // Add the pokemon image 
-      let pokemonImage = document.createElement("img");
+      let pokemonImage = document.createElement('img');
       pokemonImage.classList.add('pokemon-img')
-      pokemonImage.setAttribute("src", pokemon.imageUrl);
-      pokemonImage.setAttribute("width", "304");
-      pokemonImage.setAttribute("height", "228");
-      pokemonImage.setAttribute("alt", "The Pokemon Image");
+      pokemonImage.setAttribute('src', pokemon.imageUrl);
+      pokemonImage.setAttribute('width', '304');
+      pokemonImage.setAttribute('height', '228');
+      pokemonImage.setAttribute('alt', 'The Pokemon Image');
       
       
       //modalBody.append(types);
@@ -160,7 +159,7 @@ let pokemonRepository = (function () {
 
     //Triggers search function as input is typed
     let searchInput = document.getElementById('search-input');
-    searchInput.addEventListener("input", function () {
+    searchInput.addEventListener('input', function () {
     searchPokemon();
     });
 

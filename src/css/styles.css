@@ -38,11 +38,7 @@ body {
     color: var(--main-box);
 }
 
-<<<<<<< HEAD:css/styles.css
-#search-input{
-=======
 #search-input {
->>>>>>> gh-pages:src/css/styles.css
     border-radius: 15px;
     background-color: var(--main-box);
     border: 1px solid rgb(0, 0, 0);
@@ -55,10 +51,6 @@ body {
     font-style: italic;
 }
 
-<<<<<<< HEAD:css/styles.css
-=======
-
->>>>>>> gh-pages:src/css/styles.css
 
 /*-------------POKEDEX-------------*/
 
