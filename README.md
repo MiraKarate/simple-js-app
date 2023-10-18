@@ -54,25 +54,26 @@ To run the project locally, follow these steps:
 
 ```bash
 git clone https://github.com/your-username/pokemon-web-app.git
+```
 
 
 2. Navigate to the project directory:
 
 ```bash
 cd pokemon-web-app
-
+```
 
 3. Install project dependencies:
 
 ```bash
 npm install
-
+```
   
 4. Start the development server:
 
 ```bash
 npm start
-
+```
   
 5. Open your web browser and go to http://localhost:3000 to access the application.
 
